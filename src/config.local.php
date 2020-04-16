@@ -41,10 +41,27 @@
  */
 $CONF['configured'] = true;
 
+$PFA_VARS = array('PFA_SETUP_PASS', 'PFA_DB_USER', 'PFA_DB_HOST', 'PFA_DB_PASS', 'PFA_DB_NAME', 'PFA_POSTFIX_SERVER', 'PFA_ABUSE_EMAIL', 'PFA_HOSTMASTER_EMAIL', 'PFA_POSTMASTER_EMAIL', 'PFA_WEBMASTER_EMAIL');
+$PFA_ERROR = false;
+foreach ($PFA_VARS AS $PFA_VAR) {
+	if (!isset($_ENV[$PFA_VAR])) {
+		$PFA_ERROR = true;
+		break;
+	}
+}
+if ($PFA_ERROR) {
+	echo '<h1>Configuration Error</h1>You must set environment these variables:<ul>';
+	foreach ($PFA_VARS AS $PFA_VAR) {
+		echo '<li>'.$PFA_VAR.': '.(isset($_ENV[$PFA_VAR]) ? '<span style="color: green; font-weight: bold;">configured</span>' : '<span style="color: red; font-weight: bold;">missing</span>').'</li>';
+	}
+	echo '</ul>';
+	exit(1);
+}
+
 // In order to setup Postfixadmin, you MUST specify a hashed password here.
 // To create the hash, visit setup.php in a browser and type a password into the field,
 // on submission it will be echoed out to you as a hashed value.
-$CONF['setup_password'] = password_hash($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PF_DB_PASS'], PASSWORD_DEFAULT);
+$CONF['setup_password'] = password_hash($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS'], PASSWORD_DEFAULT);
 
 // Language config
 // Language files are located in './languages', change as required..
@@ -99,10 +116,10 @@ function language_hook($PALANG, $language) {
 // pgsql = PostgreSQL
 // sqlite = SQLite 3
 $CONF['database_type'] = 'mysqli';
-$CONF['database_host'] = $_ENV['PF_DB_HOST'];
-$CONF['database_user'] = $_ENV['PF_DB_USER'];
-$CONF['database_password'] = $_ENV['PF_DB_PASS'];
-$CONF['database_name'] = $_ENV['PF_DB_NAME'];
+$CONF['database_host'] = $_ENV['PFA_DB_HOST'];
+$CONF['database_user'] = $_ENV['PFA_DB_USER'];
+$CONF['database_password'] = $_ENV['PFA_DB_PASS'];
+$CONF['database_name'] = $_ENV['PFA_DB_NAME'];
 
 // Database SSL Config
 $CONF['database_use_ssl'] = false;
@@ -157,8 +174,8 @@ $CONF['admin_name'] = 'Postmaster';
 // Mail Server
 // Hostname (FQDN) of your mail server.
 // This is used to send email to Postfix in order to create mailboxes.
-$CONF['smtp_server'] = 'postfix-service';
-$CONF['smtp_port'] = '25';
+$CONF['smtp_server'] = $_ENV{'PFA_POSTFIX_SERVER'};
+$CONF['smtp_port'] = isset($_ENV{'PFA_POSTFIX_PORT'}) ? $_ENV{'PFA_POSTFIX_PORT'} : 25;
 
 // SMTP Client
 // Hostname (FQDN) of the server hosting Postfix Admin
@@ -234,10 +251,10 @@ $CONF['page_size'] = '10';
 // a) a full mail address
 // b) only a localpart ('postmaster' => 'admin') - the alias target will point to the same domain
 $CONF['default_aliases'] = array (
-    'abuse' => 'abuse@change-this-to-your.domain.tld',
-    'hostmaster' => 'hostmaster@change-this-to-your.domain.tld',
-    'postmaster' => 'postmaster@change-this-to-your.domain.tld',
-    'webmaster' => 'webmaster@change-this-to-your.domain.tld'
+    'abuse'      => $_ENV{'PFA_ABUSE_EMAIL'},
+    'hostmaster' => $_ENV{'PFA_HOSTMASTER_EMAIL'},
+    'postmaster' => $_ENV{'PFA_POSTMASTER_EMAIL'},
+    'webmaster'  => $_ENV{'PFA_WEBMASTER_EMAIL'}
 );
 
 // Mailboxes

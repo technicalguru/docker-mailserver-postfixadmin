@@ -61,7 +61,8 @@ if ($PFA_ERROR) {
 // In order to setup Postfixadmin, you MUST specify a hashed password here.
 // To create the hash, visit setup.php in a browser and type a password into the field,
 // on submission it will be echoed out to you as a hashed value.
-$CONF['setup_password'] = password_hash($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS'], PASSWORD_DEFAULT);
+$PFA_SALT = md5(time() . '*' . $_SERVER['REMOTE_ADDR'] . '*' . mt_rand(0, 60000));
+$CONF['setup_password'] = $PFA_SALT.':'.sha1($PFA_SALT.':'.($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS']));
 
 // Language config
 // Language files are located in './languages', change as required..

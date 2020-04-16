@@ -1,0 +1,15 @@
+--- /var/www/html/model/MailboxHandler.php.orig  2020-04-16 17:56:52.043852299 +0000
++++ /var/www/html/model/MailboxHandler.php       2020-04-16 17:58:55.600195117 +0000
+@@ -216,7 +216,10 @@
+
+
+     protected function beforestore() {
+-        if (isset($this->values['quota']) && $this->values['quota'] != -1) {
++        if (!isset($this->values['quota']) || (trim($this->values['quota']) == '')) {
++            $this->values['quota'] = -1;
++        }
++        if ($this->values['quota'] != -1) {
+             $this->values['quota'] = $this->values['quota'] * Config::read('quota_multiplier'); # convert quota from MB to bytes
+         }
+
+

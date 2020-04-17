@@ -1,5 +1,5 @@
 # docker-mailserver-postfixadmin
-This is a Docker image for a PostfixiAdmin WebUI. The project is part of the 
+This is a Docker image for a PostfixAdmin WebUI. The project is part of the 
 [docker-mailserver](https://github.com/technicalguru/docker-mailserver) project but can run separately 
 without the other components. However, a database server is always required to store structural data. 
 
@@ -57,7 +57,8 @@ The [main mailserver project](https://github.com/technicalguru/docker-mailserver
 Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/public/setup.php`.
 
 1. Enter the setup password as you provided it with environment variable `PFA_SETUP_PASS`.
-1. Create your PostfixAdmin administrator account. This is the main account to PostFixAdmin. It will enable you to create domains, mailboxes, aliases, etc.
+1. Create your PostfixAdmin administrator account. This is the main account to PostfixAdmin. It will enable you to create domains, mailboxes, aliases, etc.
+1. Login to PostfixAdmin by navigating to `/public/login.php`.
 1. Create your primary domain.
 1. Create your first mailbox in this domain.
 

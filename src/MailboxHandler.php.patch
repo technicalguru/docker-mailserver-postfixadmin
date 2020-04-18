@@ -1,0 +1,12 @@
+--- MailboxHandler.php.orig     2020-04-18 17:09:37.402734541 +0200
++++ MailboxHandler.php  2020-04-18 17:10:37.162880214 +0200
+@@ -216,7 +216,7 @@
+
+
+     protected function beforestore() {
+-
++        if (!is_numeric($this->values['quota'])) $this->values['quota'] = 0;
+         if (isset($this->values['quota']) && $this->values['quota'] != -1) {
+             $multiplier = Config::read('quota_multiplier');
+             if ($multiplier == 0 || !is_numeric($multiplier)) { // or empty string, or null, or false...
+

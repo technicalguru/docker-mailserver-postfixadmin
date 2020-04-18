@@ -1,9 +1,9 @@
 FROM eu.gcr.io/long-grin-186810/rs-php:7.4.4-apache-2.4.38.0
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
-#RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
-#    patch \
-#    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
+    patch \
+    && rm -rf /var/lib/apt/lists/*
 
 #ADD etc/php/ /usr/local/etc/php/conf.d/
 #ADD etc/conf/ /etc/apache2/conf-enabled/
@@ -18,8 +18,9 @@ RUN set -xe \
     && curl -o postfixadmin.tar.gz -L "$PFA_URL" \
     && tar --strip-components=1 -xvf postfixadmin.tar.gz \
     && rm postfixadmin.tar.gz \
-    && mkdir templates_c \
-    && chown -R www-data:www-data .
+    && mkdir templates_c 
 
 ADD src/    /var/www/html/
+RUN patch model/MailboxHandler.php < MailboxHandler.php.patch
 
+RUN chown -R www-data:www-data .

@@ -35,7 +35,7 @@ ARG ARG_VERSION="${PFA_VERSION}-01"
 ARG ARG_REVISION
 ARG ARG_VENDOR=technicalguru
 ARG ARG_TITLE=technicalguru/mailserver-postfixadmin
-ARG ARG_DESCRIPTION=Provides PostfixAdmin Web UI with Apache/PHP
+ARG ARG_DESCRIPTION="Provides PostfixAdmin Web UI with Apache/PHP"
 ARG ARG_DOCUMENTATION=https://github.com/technicalguru/docker-mailserver-postfixadmin
 ARG ARG_AUTHORS=technicalguru
 ARG ARG_LICENSES=GPL-3.0-or-later

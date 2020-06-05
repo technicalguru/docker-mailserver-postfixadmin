@@ -51,7 +51,7 @@ _docker-mailserver-postfixadmin_  exposes port 80 (the WebUI). No TLS support is
 The [main mailserver project](https://github.com/technicalguru/docker-mailserver) has examples of container configurations:
 * [with docker-compose](https://github.com/technicalguru/docker-mailserver/tree/master/examples/docker-compose)
 * [with Kubernetes YAML files](https://github.com/technicalguru/docker-mailserver/tree/master/examples/kubernetes)
-* [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/helm-charts)
+* [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/examples/helm-charts)
 
 ## Bootstrap and Setup
 Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/public/setup.php`.

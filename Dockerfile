@@ -1,4 +1,4 @@
-FROM eu.gcr.io/long-grin-186810/rs-php:7.4.4-apache-2.4.38.0
+FROM eu.gcr.io/long-grin-186810/rs-php:7.4.10-apache-2.4.38.2
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
@@ -12,6 +12,7 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 RUN chown -R www-data:www-data /var/www/html
 
 ENV PFA_VERSION="3.2.4"
+ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \
     && cd /var/www/html \
@@ -31,8 +32,8 @@ RUN chown -R www-data:www-data .
 ARG ARG_CREATED
 ARG ARG_URL=https://github.com/technicalguru/docker-mailserver-postfixadmin
 ARG ARG_SOURCE=https://github.com/technicalguru/docker-mailserver-postfixadmin
-ARG ARG_VERSION="${PFA_VERSION}-01"
-ARG ARG_REVISION
+ARG ARG_VERSION="${PFA_VERSION}.${PFA_REVISION}"
+ARG ARG_REVISION="${PFA_REVISION}"
 ARG ARG_VENDOR=technicalguru
 ARG ARG_TITLE=technicalguru/mailserver-postfixadmin
 ARG ARG_DESCRIPTION="Provides PostfixAdmin Web UI with Apache/PHP"

@@ -1,4 +1,4 @@
-FROM eu.gcr.io/long-grin-186810/rs-php:7.4.12-apache-2.4.38.0
+FROM eu.gcr.io/long-grin-186810/rs-php:7.4.12-apache-2.4.38.1
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \

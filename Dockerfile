@@ -1,4 +1,4 @@
-FROM technicalguru/rs-php:7.4.19-apache-2.4.38.2
+FROM technicalguru/rs-php:7.4.19-apache-2.4.38.3
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \

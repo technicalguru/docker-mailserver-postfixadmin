@@ -1,4 +1,4 @@
-FROM technicalguru/rs-php:7.4.19-apache-2.4.38.3
+FROM technicalguru/rs-php:7.4.24-apache-2.4.48.1
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
@@ -11,7 +11,7 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 #ADD etc/sites/ /etc/apache2/sites-enabled/
 RUN chown -R www-data:www-data /var/www/html
 
-ENV PFA_VERSION="3.2.4"
+ENV PFA_VERSION="3.3.10"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \
@@ -22,7 +22,7 @@ RUN set -xe \
     && mkdir templates_c 
 
 ADD src/    /var/www/html/
-RUN patch model/MailboxHandler.php < MailboxHandler.php.patch
+#RUN patch model/MailboxHandler.php < MailboxHandler.php.patch
 
 RUN chown -R www-data:www-data .
 

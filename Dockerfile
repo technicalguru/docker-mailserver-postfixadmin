@@ -1,4 +1,4 @@
-FROM technicalguru/rs-php:7.4.28-apache-2.4.52.0
+FROM technicalguru/rs-php:7.4.28-apache-2.4.53.0
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
@@ -11,7 +11,7 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 #ADD etc/sites/ /etc/apache2/sites-enabled/
 RUN chown -R www-data:www-data /var/www/html
 
-ENV PFA_VERSION="3.3.10"
+ENV PFA_VERSION="3.3.11"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \

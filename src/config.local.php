@@ -62,7 +62,10 @@ if ($PFA_ERROR) {
 // To create the hash, visit setup.php in a browser and type a password into the field,
 // on submission it will be echoed out to you as a hashed value.
 $PFA_SALT = md5(time() . '*' . $_SERVER['REMOTE_ADDR'] . '*' . mt_rand(0, 60000));
-$CONF['setup_password'] = $PFA_SALT.':'.sha1($PFA_SALT.':'.($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS']));
+# SHA1 encoding is obsolete since 3.3
+#$CONF['setup_password'] = $PFA_SALT.':'.sha1($PFA_SALT.':'.($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS']));
+# New password hashing since 3.3
+$CONF['setup_password'] = password_hash(($_ENV['PFA_SETUP_PASS'] ? $_ENV['PFA_SETUP_PASS'] : $_ENV['PFA_DB_PASS']), PASSWORD_DEFAULT);
 
 // Language config
 // Language files are located in './languages', change as required..

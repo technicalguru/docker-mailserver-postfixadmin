@@ -6,13 +6,15 @@ without the other components. However, a database server is always required to s
 Related images:
 * [docker-mailserver](https://github.com/technicalguru/docker-mailserver) - The main project, containing composition instructions
 * [docker-mailserver-postfix](https://github.com/technicalguru/docker-mailserver-postfix) - Postfix/Dovecot image (mailserver component)
+* [docker-mailserver-opendkim](https://github.com/technicalguru/docker-mailserver-opendkim) - OpenDKIM image (DKIM signing milter component)
 * [docker-mailserver-amavis](https://github.com/technicalguru/docker-mailserver-amavis) - Amavis, ClamAV and SpamAssassin (provides spam and virus detection)
 * [docker-mailserver-roundcube](https://github.com/technicalguru/docker-mailserver-roundcube) - Roundcube Webmailer
 
 # Tags
 The following versions are available from DockerHub. The image tag matches the PostfixAdmin version.
 
-* [3.2.4-01, 3.2.4, 3.2, 3, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
+* [3.3.11.1, 3.3.11, 3.3, 3, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.11.1) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.11.1/Dockerfile)
+* [3.2.4-01, 3.2.4, 3.2](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.2.4-01) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
 
 # Features
 * Database and PostfixAdmin setup from environment variables
@@ -51,7 +53,7 @@ _docker-mailserver-postfixadmin_  exposes port 80 (the WebUI). No TLS support is
 The [main mailserver project](https://github.com/technicalguru/docker-mailserver) has examples of container configurations:
 * [with docker-compose](https://github.com/technicalguru/docker-mailserver/tree/master/examples/docker-compose)
 * [with Kubernetes YAML files](https://github.com/technicalguru/docker-mailserver/tree/master/examples/kubernetes)
-* [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/helm-charts)
+* [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/examples/helm-charts)
 
 ## Bootstrap and Setup
 Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/public/setup.php`.

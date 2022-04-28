@@ -41,6 +41,9 @@
  */
 $CONF['configured'] = true;
 
+// Required for deprecation warnings in PHP/8.1
+ini_set('display_errors', 'Off');
+
 $PFA_VARS = array('PFA_SETUP_PASS', 'PFA_DB_USER', 'PFA_DB_HOST', 'PFA_DB_PASS', 'PFA_DB_NAME', 'PFA_POSTFIX_SERVER', 'PFA_ABUSE_EMAIL', 'PFA_HOSTMASTER_EMAIL', 'PFA_POSTMASTER_EMAIL', 'PFA_WEBMASTER_EMAIL');
 $PFA_ERROR = false;
 foreach ($PFA_VARS AS $PFA_VAR) {
@@ -178,8 +181,8 @@ $CONF['admin_name'] = 'Postmaster';
 // Mail Server
 // Hostname (FQDN) of your mail server.
 // This is used to send email to Postfix in order to create mailboxes.
-$CONF['smtp_server'] = $_ENV{'PFA_POSTFIX_SERVER'};
-$CONF['smtp_port'] = isset($_ENV{'PFA_POSTFIX_PORT'}) ? $_ENV{'PFA_POSTFIX_PORT'} : 25;
+$CONF['smtp_server'] = $_ENV['PFA_POSTFIX_SERVER'];
+$CONF['smtp_port'] = isset($_ENV['PFA_POSTFIX_PORT']) ? $_ENV['PFA_POSTFIX_PORT'] : 25;
 
 // SMTP Client
 // Hostname (FQDN) of the server hosting Postfix Admin
@@ -255,10 +258,10 @@ $CONF['page_size'] = '10';
 // a) a full mail address
 // b) only a localpart ('postmaster' => 'admin') - the alias target will point to the same domain
 $CONF['default_aliases'] = array (
-    'abuse'      => $_ENV{'PFA_ABUSE_EMAIL'},
-    'hostmaster' => $_ENV{'PFA_HOSTMASTER_EMAIL'},
-    'postmaster' => $_ENV{'PFA_POSTMASTER_EMAIL'},
-    'webmaster'  => $_ENV{'PFA_WEBMASTER_EMAIL'}
+    'abuse'      => $_ENV['PFA_ABUSE_EMAIL'],
+    'hostmaster' => $_ENV['PFA_HOSTMASTER_EMAIL'],
+    'postmaster' => $_ENV['PFA_POSTMASTER_EMAIL'],
+    'webmaster'  => $_ENV['PFA_WEBMASTER_EMAIL']
 );
 
 // Mailboxes

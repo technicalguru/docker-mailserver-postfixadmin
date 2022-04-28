@@ -1,4 +1,4 @@
-FROM technicalguru/rs-php:8.1.5-apache-2.4.53.1
+FROM technicalguru/rs-php:8.1.5-apache-2.4.53.2
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \

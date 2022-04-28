@@ -41,9 +41,6 @@
  */
 $CONF['configured'] = true;
 
-// Required for deprecation warnings in PHP/8.1
-ini_set('display_errors', 'Off');
-
 $PFA_VARS = array('PFA_SETUP_PASS', 'PFA_DB_USER', 'PFA_DB_HOST', 'PFA_DB_PASS', 'PFA_DB_NAME', 'PFA_POSTFIX_SERVER', 'PFA_ABUSE_EMAIL', 'PFA_HOSTMASTER_EMAIL', 'PFA_POSTMASTER_EMAIL', 'PFA_WEBMASTER_EMAIL');
 $PFA_ERROR = false;
 foreach ($PFA_VARS AS $PFA_VAR) {

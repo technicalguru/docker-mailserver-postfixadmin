@@ -178,8 +178,8 @@ $CONF['admin_name'] = 'Postmaster';
 // Mail Server
 // Hostname (FQDN) of your mail server.
 // This is used to send email to Postfix in order to create mailboxes.
-$CONF['smtp_server'] = $_ENV{'PFA_POSTFIX_SERVER'};
-$CONF['smtp_port'] = isset($_ENV{'PFA_POSTFIX_PORT'}) ? $_ENV{'PFA_POSTFIX_PORT'} : 25;
+$CONF['smtp_server'] = $_ENV['PFA_POSTFIX_SERVER'];
+$CONF['smtp_port'] = isset($_ENV['PFA_POSTFIX_PORT']) ? $_ENV['PFA_POSTFIX_PORT'] : 25;
 
 // SMTP Client
 // Hostname (FQDN) of the server hosting Postfix Admin
@@ -255,10 +255,10 @@ $CONF['page_size'] = '10';
 // a) a full mail address
 // b) only a localpart ('postmaster' => 'admin') - the alias target will point to the same domain
 $CONF['default_aliases'] = array (
-    'abuse'      => $_ENV{'PFA_ABUSE_EMAIL'},
-    'hostmaster' => $_ENV{'PFA_HOSTMASTER_EMAIL'},
-    'postmaster' => $_ENV{'PFA_POSTMASTER_EMAIL'},
-    'webmaster'  => $_ENV{'PFA_WEBMASTER_EMAIL'}
+    'abuse'      => $_ENV['PFA_ABUSE_EMAIL'],
+    'hostmaster' => $_ENV['PFA_HOSTMASTER_EMAIL'],
+    'postmaster' => $_ENV['PFA_POSTMASTER_EMAIL'],
+    'webmaster'  => $_ENV['PFA_WEBMASTER_EMAIL']
 );
 
 // Mailboxes

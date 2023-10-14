@@ -13,7 +13,7 @@ Related images:
 # Tags
 The following versions are available from DockerHub. The image tag matches the PostfixAdmin version.
 
-* [3.3.11.2, 3.3.11, 3.3, 3, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.11.2) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.11.2/Dockerfile)
+* [3.3.13.0, 3.3.13, 3.3, 3, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.13.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.13.0/Dockerfile)
 * [3.2.4-01, 3.2.4, 3.2](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.2.4-01) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
 
 # Features
@@ -65,11 +65,7 @@ Once you have started your PostfixAdmin container successfully, it is now time t
 1. Create your first mailbox in this domain.
 
 # Additional PostfixAdmin customization
-You can further customize `config.inc.local.php`. Please follow these instructions:
-
-1. Get a copy of the file from the `/var/www/html` folder. 
-1. Customize your configuration file.
-1. Provide your customized file back into the `/var/www/html` by using a volume mapping.
+You can further customize the configuration by placing a `config.site.php` into the `/var/www/html` folder by using a volume mapping.
 
 # Issues
 This Docker image is mature and supports my own mailserver in production. There are no known issues at the moment.

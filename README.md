@@ -65,11 +65,7 @@ Once you have started your PostfixAdmin container successfully, it is now time t
 1. Create your first mailbox in this domain.
 
 # Additional PostfixAdmin customization
-You can further customize `config.inc.local.php`. Please follow these instructions:
-
-1. Get a copy of the file from the `/var/www/html` folder. 
-1. Customize your configuration file.
-1. Provide your customized file back into the `/var/www/html` by using a volume mapping.
+You can further customize the configuration by placing a `config.site.php` into the `/var/www/html` folder by using a volume mapping.
 
 # Issues
 This Docker image is mature and supports my own mailserver in production. There are no known issues at the moment.

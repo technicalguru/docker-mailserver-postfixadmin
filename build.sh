@@ -1,1 +1,1 @@
-docker build -t technicalguru/mailserver-postfixadmin:latest .
+docker build --progress=plain -t technicalguru/mailserver-postfixadmin:latest .

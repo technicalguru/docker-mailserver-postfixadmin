@@ -1,4 +1,4 @@
-FROM technicalguru/php:8.2.5-apache-2.4.56.0
+FROM technicalguru/php:8.2.14-apache-2.4.57.0
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \

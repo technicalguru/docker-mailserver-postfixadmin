@@ -14,7 +14,7 @@ foreach ($PFA_VARS AS $PFA_VAR) {
 	}
 }
 if ($PFA_ERROR) {
-	echo '<h1>Configuration Error</h1>You must set environment these variables:<ul>';
+	echo '<h1>Configuration Error</h1>You must set these environment variables:<ul>';
 	foreach ($PFA_VARS AS $PFA_VAR) {
 		echo '<li>'.$PFA_VAR.': '.(isset($_ENV[$PFA_VAR]) ? '<span style="color: green; font-weight: bold;">configured</span>' : '<span style="color: red; font-weight: bold;">missing</span>').'</li>';
 	}

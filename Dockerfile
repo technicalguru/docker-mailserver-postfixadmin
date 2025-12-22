@@ -20,7 +20,8 @@ RUN set -xe \
     && curl -o postfixadmin.tar.gz -L "$PFA_URL" \
     && tar --strip-components=1 -xvf postfixadmin.tar.gz \
     && rm postfixadmin.tar.gz \
-    && mkdir templates_c 
+    && mkdir templates_c \
+    && composer update --no-dev
 
 ADD src/    /var/www/html/
 #RUN patch model/MailboxHandler.php < MailboxHandler.php.patch

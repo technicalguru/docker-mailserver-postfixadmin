@@ -1,4 +1,4 @@
-FROM technicalguru/php:8.4.13-apache-2.4.65.0
+FROM technicalguru/php:8.4.16-apache-2.4.65.0
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
@@ -11,7 +11,8 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 #ADD etc/sites/ /etc/apache2/sites-enabled/
 RUN chown -R www-data:www-data /var/www/html
 
-ENV PFA_VERSION="3.3.16"
+#ENV PFA_VERSION="3.3.16"
+ENV PFA_VERSION="4.0.1"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \
@@ -19,7 +20,8 @@ RUN set -xe \
     && curl -o postfixadmin.tar.gz -L "$PFA_URL" \
     && tar --strip-components=1 -xvf postfixadmin.tar.gz \
     && rm postfixadmin.tar.gz \
-    && mkdir templates_c 
+    && mkdir templates_c \
+    && composer update --no-dev
 
 ADD src/    /var/www/html/
 #RUN patch model/MailboxHandler.php < MailboxHandler.php.patch

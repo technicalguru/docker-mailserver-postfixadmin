@@ -54,6 +54,8 @@ $CONF['default_aliases'] = array (
     'webmaster'  => $_ENV['PFA_WEBMASTER_EMAIL']
 );
 
+$CONF['show_footer_text'] = 'NO';
+
 if (file_exists(dirname(__FILE__) . '/config.site.php')) {
     require_once(dirname(__FILE__) . '/config.site.php');
 }

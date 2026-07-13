@@ -12,7 +12,7 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 RUN chown -R www-data:www-data /var/www/html
 
 #ENV PFA_VERSION="3.3.16"
-ENV PFA_VERSION="4.0.1"
+ENV PFA_VERSION="4.0.5"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \

@@ -13,7 +13,7 @@ Related images:
 # Tags
 The following versions are available from DockerHub. The image tag matches the PostfixAdmin version.
 
-* [4.0.1.0, 4.0.1, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.1.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.1.0/Dockerfile)
+* [4.0.5.0, 4.0.5, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.5.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.5.0/Dockerfile)
 * [3.3.16.0, 3.3.16, 3.3, 3](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.16.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.16.0/Dockerfile)
 * [3.2.4-01, 3.2.4, 3.2](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.2.4-01) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
 

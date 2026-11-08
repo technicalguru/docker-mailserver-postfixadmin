@@ -63,7 +63,7 @@ The [main mailserver project](https://github.com/technicalguru/docker-mailserver
 * [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/examples/helm-charts)
 
 ## Bootstrap and Setup
-Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/public/setup.php`.
+Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/setup.php`.
 
 1. Enter the setup password as you provided it with environment variable `PFA_SETUP_PASS`.
 1. Create your PostfixAdmin administrator account. This is the main account to PostfixAdmin. It will enable you to create domains, mailboxes, aliases, etc.

@@ -13,7 +13,7 @@ Related images:
 # Tags
 The following versions are available from DockerHub. The image tag matches the PostfixAdmin version.
 
-* [4.0.5.1, 4.0.5, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.5.1) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.5.1/Dockerfile)
+* [4.0.6.0, 4.0.6, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.6.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.6.0/Dockerfile)
 * [3.3.16.0, 3.3.16, 3.3, 3](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.16.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.16.0/Dockerfile)
 * [3.2.4-01, 3.2.4, 3.2](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.2.4-01) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
 
@@ -65,7 +65,7 @@ Once you have started your PostfixAdmin container successfully, it is now time t
 
 1. Enter the setup password as you provided it with environment variable `PFA_SETUP_PASS`.
 1. Create your PostfixAdmin administrator account. This is the main account to PostfixAdmin. It will enable you to create domains, mailboxes, aliases, etc.
-1. Login to PostfixAdmin by navigating to `/public/login.php`.
+1. Login to PostfixAdmin by navigating to `/login.php`.
 1. Create your primary domain.
 1. Create your first mailbox in this domain.
 

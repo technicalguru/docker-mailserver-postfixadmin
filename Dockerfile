@@ -8,10 +8,11 @@ RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recomme
 #ADD etc/php/ /usr/local/etc/php/conf.d/
 #ADD etc/conf/ /etc/apache2/conf-enabled/
 #ADD etc/mods/ /etc/apache2/mods-enabled/
-#ADD etc/sites/ /etc/apache2/sites-enabled/
+RUN rm /etc/apache2/sites-enabled/*
+ADD etc/sites/ /etc/apache2/sites-enabled/
 RUN chown -R www-data:www-data /var/www/html
 
-ENV PFA_VERSION="4.0.5"
+ENV PFA_VERSION="4.0.6"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \

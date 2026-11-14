@@ -13,7 +13,7 @@ Related images:
 # Tags
 The following versions are available from DockerHub. The image tag matches the PostfixAdmin version.
 
-* [4.0.6.0, 4.0.6, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.6.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.6.0/Dockerfile)
+* [4.0.6.1, 4.0.6, 4.0, 4, latest](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v4.0.6.1) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/4.0.6.1/Dockerfile)
 * [3.3.16.0, 3.3.16, 3.3, 3](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.3.16.0) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.3.16.0/Dockerfile)
 * [3.2.4-01, 3.2.4, 3.2](https://hub.docker.com/repository/docker/technicalguru/mailserver-postfixadmin/tree/v3.2.4-01) - [Dockerfile](https://github.com/technicalguru/docker-mailserver-postfixadmin/blob/3.2.4-01/Dockerfile)
 
@@ -46,10 +46,12 @@ _docker-mailserver-postfixadmin_  requires various environment variables to be s
 | `PFA_DB_PASS` | The password of the database user |  |
 | `PFA_DB_NAME` | The name of the database | |
 | `PFA_POSTFIX_SERVER` | The hostname of your SMTP server. Postfix requires this to send out initial e-mail for mailboxes. |  |
+| `PFA_POSTFIX_PORT` | The port of your SMTP server. Postfix requires this to send out initial e-mail for mailboxes. | 25 |
 | `PFA_ABUSE_EMAIL` | E-mail address to be informed about abuses. |  |
 | `PFA_HOSTMASTER_EMAIL` | E-mail address to be informed about issues with the host image. |  |
 | `PFA_POSTMASTER_EMAIL` | E-mail address to be informed about mailbox and domain issues. |  |
 | `PFA_WEBMASTER_EMAIL` | E-mail address to be informed about issues with the WebUI. |  |
+| `PFA_EMAILCHECK_RESOLVE_DOMAIN` | Whether PostfixAdmin shall attempt to resolve the domain name of an email address (via DNS) when creating or validating a mailbox or alias. | YES |
 
 ## Ports
 _docker-mailserver-postfixadmin_  exposes port 80 (the WebUI). No TLS support is built in. So you shall put your container behind an Ingress or Reverse Proxy that enforces HTTPS.
@@ -61,7 +63,7 @@ The [main mailserver project](https://github.com/technicalguru/docker-mailserver
 * [with HELM charts](https://github.com/technicalguru/docker-mailserver/tree/master/examples/helm-charts)
 
 ## Bootstrap and Setup
-Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/public/setup.php`.
+Once you have started your PostfixAdmin container successfully, it is now time to perform the first-time setup for your mailserver. Open the web interface and navigate to `/setup.php`.
 
 1. Enter the setup password as you provided it with environment variable `PFA_SETUP_PASS`.
 1. Create your PostfixAdmin administrator account. This is the main account to PostfixAdmin. It will enable you to create domains, mailboxes, aliases, etc.

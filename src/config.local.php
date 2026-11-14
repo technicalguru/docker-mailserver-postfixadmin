@@ -54,7 +54,8 @@ $CONF['default_aliases'] = array (
     'webmaster'  => $_ENV['PFA_WEBMASTER_EMAIL']
 );
 
-$CONF['show_footer_text'] = 'NO';
+$CONF['show_footer_text']          = 'NO';
+$CONF['emailcheck_resolve_domain'] = isset($_ENV['PFA_EMAILCHECK_RESOLVE_DOMAIN']) ? $_ENV['PFA_EMAILCHECK_RESOLVE_DOMAIN'] : 'YES';
 
 if (file_exists(dirname(__FILE__) . '/config.site.php')) {
     require_once(dirname(__FILE__) . '/config.site.php');

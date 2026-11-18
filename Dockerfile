@@ -1,4 +1,4 @@
-FROM technicalguru/php:8.4
+FROM technicalguru/php:8.5
 LABEL maintainer="Ralph Schuster <github@ralph-schuster.eu>"
 
 RUN apt-get update &&  apt-get update && apt-get install -y --no-install-recommends \
@@ -12,7 +12,7 @@ RUN rm /etc/apache2/sites-enabled/*
 ADD etc/sites/ /etc/apache2/sites-enabled/
 RUN chown -R www-data:www-data /var/www/html
 
-ENV PFA_VERSION="4.0.6"
+ENV PFA_VERSION="4.0.7"
 ENV PFA_REVISION="0"
 ENV PFA_URL="https://github.com/postfixadmin/postfixadmin/archive/postfixadmin-${PFA_VERSION}.tar.gz"
 RUN set -xe \

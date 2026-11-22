@@ -1,7 +1,7 @@
 docker buildx build \
      --progress=plain \
      -t technicalguru/mailserver-postfixadmin:latest \
-     -t technicalguru/mailserver-postfixadmin:4.0.7.0 \
+     -t technicalguru/mailserver-postfixadmin:4.0.7.1 \
      -t technicalguru/mailserver-postfixadmin:4.0.7 \
      -t technicalguru/mailserver-postfixadmin:4.0 \
      -t technicalguru/mailserver-postfixadmin:4 \
